@@ -1,6 +1,8 @@
 .DS_Store
 .vscode/
-data/raw/
-data/processed/
+data/raw/*
+data/processed/*
+!data/raw/.gitkeep
+!data/processed/.gitkeep
 pipelines/__pycache__/
 test.py
