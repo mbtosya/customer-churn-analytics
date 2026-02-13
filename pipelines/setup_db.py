@@ -2,7 +2,8 @@ import logging
 
 from sqlalchemy import create_engine, text
 
-DB_NAME = "churn_analytics"
+from config import DB_NAME
+
 
 def create_database():
     logging.info("Checking whether the database exists...")

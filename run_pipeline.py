@@ -2,7 +2,9 @@ import logging
 import sys
 
 from pipelines.extract import run_extract
+from pipelines.load_raw import run_load_raw
 from pipelines.setup_db import create_database
+from pipelines.setup_schema import run_schema
 
 logging.basicConfig(
     level=logging.INFO,
@@ -13,7 +15,9 @@ def main():
         logging.info("Starting pipeline...")
 
         create_database()
+        run_schema()
         run_extract()
+        run_load_raw()
 
         logging.info("Pipeline finished.")
 
