@@ -1,8 +1,11 @@
+import logging
+
 from sqlalchemy import create_engine, text
 
 DB_NAME = "churn_analytics"
 
 def create_database():
+    logging.info("Checking whether the database exists...")
     engine = create_engine("postgresql://localhost/postgres")
 
     with engine.connect() as conn:
@@ -14,7 +17,8 @@ def create_database():
         )
 
         if not result.scalar():
+            logging.info(f"Creating database: {DB_NAME}")
             conn.execute(text("COMMIT"))
             conn.execute(text(f"CREATE DATABASE {DB_NAME}"))
-
-create_database()
+        else:
+            logging.info("Database already exists.")
