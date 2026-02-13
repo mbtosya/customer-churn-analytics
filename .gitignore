@@ -5,4 +5,5 @@ data/processed/*
 !data/raw/.gitkeep
 !data/processed/.gitkeep
 pipelines/__pycache__/
+__pycache__
 test.py
