@@ -1,0 +1,6 @@
+.DS_Store
+.vscode/
+data/raw/
+data/processed/
+pipelines/__pycache__/
+test.py
