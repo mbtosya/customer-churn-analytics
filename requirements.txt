@@ -1,0 +1,6 @@
+kaggle==1.7.4.5
+matplotlib==3.10.8
+numpy==2.2.6
+pandas==2.3.3
+psycopg2-binary==2.9.11
+SQLAlchemy==2.0.46
