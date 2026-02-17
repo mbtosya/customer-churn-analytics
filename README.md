@@ -1,12 +1,19 @@
 # Customer Retention Analytics
 
-End-to-end churn analytics system designed to simulate a banking data environment.
+This project develops an end-to-end churn analytics system designed to simulate a banking data environment.
+The system integrates automated data pipelines, layered SQL transformations, and interpretable machine learning models to monitor customer behavior and identify churn risk. By combining business KPIs, behavioral segmentation, and predictive modeling, the system provides actionable insights to guide targeted and cost-efficient retention strategies.
 
-The project has been developed and tested on macOS and is compatible with Windows and Linux.
+## Business Objective
 
-## Business Objectives
+Customer attrition is a major source of revenue loss in retail banking, as acquiring new customers is significantly more expensive than retaining existing ones. Customer acquisition usually involves significant upfront investments through subsidized credit products, promotional savings rates, and sign-up bonuses. These strategies often result in delayed profitability, making long-term customer retention critical for recovering acquisition costs and generating sustainable value.
+
+Customer value in retail banking typically increases over time as relationships deepen, trust grows, and customers adopt a broader range of financial products such as credit, savings, and investments. As interaction and activity expand, customers tend to concentrate financial activity in one institution, increasing the institution's share of customer financial activity and reducing attrition risk. At the same time, the institution accumulates richer behavioral data, enabling more accurate risk assessment and targeted product offerings, which increase profitability.
+
+This lifecycle dynamic makes early detection of disengagement particularly important, as attrition in early stages can prevent long-term value creation. Sustainable growth requires continuously managing the balance between acquisition and retention, rather than relying solely on expansion. Effective retention strategies rely on continuous monitoring of customer engagement to enable targeted and cost-efficient interventions that stabilize revenue streams and support long-term growth.
 
 ## Project Goals
+
+
 
 ## System Architecture
 
@@ -40,6 +47,7 @@ EDA was performed on the raw dataset to identify key drivers of churn. Detailed 
 ## Key Insights
 
 ## Setup
+The project has been developed on macOS and is compatible with Windows and Linux.
 ### Prerequisites
 - Python installed
 - Conda installed
@@ -68,14 +76,14 @@ pip install -r requirements.txt
 2. Place the file in:
 
 **macOS / Linux:**
-```bash
+```
 ~/.kaggle/kaggle.json
 ```
 Set appropriate permissions (Optional, recommended):
 ```bash
 chmod 600 ~/.kaggle/kaggle.json
 ```
-Windows:
+**Windows:**
 ```
 C:\Users\<your-username>\.kaggle\kaggle.json
 ```
