@@ -1,5 +1,4 @@
 import logging
-import os
 import subprocess
 import zipfile
 
@@ -67,11 +66,45 @@ def validate_raw_data():
 
     logging.info("Raw dataset validation passed.")
 
+def standardize_columns():
+    logging.info("Standardizing column names...")
+
+    df = pd.read_csv(RAW_CSV)
+
+    # Check if already standardized
+    if "bayes_1" in df.columns and "bayes_2" in df.columns:
+        logging.info("Columns already standardized.")
+        return
+
+    rename_map = {}
+
+    for col in df.columns:
+        col_lower = col.lower()
+
+        if "naive_bayes" in col_lower:
+            if col_lower.endswith("_1"):
+                rename_map[col] = "bayes_1"
+            elif col_lower.endswith("_2"):
+                rename_map[col] = "bayes_2"
+
+    if rename_map:
+        df.rename(columns=rename_map, inplace=True)
+
+        if df.columns.duplicated().any():
+            raise ValueError("Duplicate columns detected after standardization.")
+
+        df.to_csv(RAW_CSV, index=False)
+        logging.info(f"Renamed {len(rename_map)} columns.")
+    else:
+        logging.warning("Naive Bayes columns not found in source.")
+
+
 def run_extract():
     RAW_DIR.mkdir(parents=True, exist_ok=True)
 
     download_dataset()
     unzip_dataset()
+    standardize_columns()
     validate_raw_data()
 
     logging.info("Raw data ready.")

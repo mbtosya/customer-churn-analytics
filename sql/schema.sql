@@ -3,7 +3,7 @@ CREATE SCHEMA IF NOT EXISTS staging;
 CREATE SCHEMA IF NOT EXISTS analytics;
 
 CREATE TABLE IF NOT EXISTS raw.customer_churn (
-    clientnum BIGINT,
+    clientnum INTEGER,
     attrition_flag TEXT,
     customer_age INTEGER,
     gender TEXT,
@@ -24,8 +24,8 @@ CREATE TABLE IF NOT EXISTS raw.customer_churn (
     total_trans_ct INTEGER,
     total_ct_chng_q4_q1 NUMERIC,
     avg_utilization_ratio NUMERIC,
-    naive_bayes_1 NUMERIC,
-    naive_bayes_2 NUMERIC,
+    bayes_1 NUMERIC,
+    bayes_2 NUMERIC,
     ingestion_ts TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -37,7 +37,7 @@ ON raw.customer_churn (clientnum);
 
 
 CREATE TABLE IF NOT EXISTS staging.customer_churn (
-    clientnum BIGINT PRIMARY KEY,
+    clientnum INTEGER PRIMARY KEY,
     churned INTEGER,
     months_inactive_12_mon INTEGER,
     contacts_count_12_mon INTEGER,
