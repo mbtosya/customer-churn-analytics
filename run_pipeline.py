@@ -5,7 +5,9 @@ from pipelines.extract import run_extract
 from pipelines.load_raw import run_load_raw
 from pipelines.setup_db import create_database
 from pipelines.setup_schema import run_schema
+from pipelines.staging import run_staging
 
+# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s | %(levelname)s | %(message)s")
@@ -18,6 +20,7 @@ def main():
         run_schema()
         run_extract()
         run_load_raw()
+        run_staging()
 
         logging.info("Pipeline finished.")
 

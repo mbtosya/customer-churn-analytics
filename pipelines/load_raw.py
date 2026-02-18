@@ -106,8 +106,8 @@ def run_load_raw():
                     total_trans_ct,
                     total_ct_chng_q4_q1,
                     avg_utilization_ratio,
-                    bayes_1,
-                    bayes_2
+                    naive_bayes_score_1,
+                    naive_bayes_score_2
                 )
                 FROM STDIN WITH CSV HEADER
                 """,

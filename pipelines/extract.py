@@ -66,6 +66,7 @@ def validate_raw_data():
 
     logging.info("Raw dataset validation passed.")
 
+# Rename naive bayes columns to avoid duplicate column error during table creation as the original names are truncated and become identical.
 def standardize_columns():
     logging.info("Standardizing column names...")
 
@@ -83,9 +84,9 @@ def standardize_columns():
 
         if "naive_bayes" in col_lower:
             if col_lower.endswith("_1"):
-                rename_map[col] = "bayes_1"
+                rename_map[col] = "naive_bayes_score_1"
             elif col_lower.endswith("_2"):
-                rename_map[col] = "bayes_2"
+                rename_map[col] = "naive_bayes_score_2"
 
     if rename_map:
         df.rename(columns=rename_map, inplace=True)

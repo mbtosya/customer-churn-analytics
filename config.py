@@ -9,6 +9,8 @@ PROCESSED_DIR = DATA_DIR / "processed"
 RAW_CSV = RAW_DIR / "BankChurners.csv"
 ZIP_PATH = RAW_DIR / "credit-card-customers.zip"
 SCHEMA_PATH = PROJECT_ROOT / "sql" / "schema.sql"
+STAGING_SQL_PATH = PROJECT_ROOT / "sql" / "staging.sql"
+
 
 DATASET_NAME = "sakshigoyal7/credit-card-customers"
 DB_NAME = "churn_analytics"
