@@ -1,4 +1,4 @@
-# Customer Retention Analytics
+# Customer Churn Analytics
 
 This project develops an end-to-end churn analytics system designed to simulate a banking data environment.
 The system integrates automated data pipelines, layered SQL transformations, and interpretable machine learning models to monitor customer behavior and identify churn risk. By combining business KPIs, behavioral segmentation, and predictive modeling, the system provides actionable insights to guide targeted and cost-efficient retention strategies.
@@ -13,7 +13,22 @@ This lifecycle dynamic makes early detection of disengagement particularly impor
 
 ## Project Goals
 
-
+The objective of this project is to build a structured churn analytics framework that supports proactive customer retention through behavioral analysis, segmentation, and predictive modeling. Key goals include:
+#### Understanding customer behavior
+- Analyze customer behavior through engagement, transaction activity, and credit utilization patterns.
+- Identify behavioral changes across the customer lifecycle that precede disengagement and churn.
+#### Churn driver identification
+- Quantify the impact of inactivity and declining engagement on churn risk.
+- Detect high-risk customer segments and key behavioral drivers of churn.
+#### Customer segmentation
+- Group customers based on engagement, product usage, and churn risk.
+- Identify high-value but vulnerable customers for targeted intervention.
+#### Predictive analytics
+- Develop interpretable models to estimate churn probability and proxy measures of customer value.
+- Compare alternative approaches using structured evaluation.
+#### Monitoring and decision support
+- Define KPIs to track retention, engagement, and behavioral trends.
+- Develop structured reporting and visualization to enable continuous monitoring and evaluation of retention strategies based on risk, value, and intervention cost.
 
 ## System Architecture
 
